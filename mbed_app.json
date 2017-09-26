@@ -23,6 +23,18 @@
         "wifi-rx": {
             "help": "RX pin for serial connection to external device",
             "value": "D0"
+        },
+        "camera":{
+            "help": "0:disable 1:enable",
+            "value": "0"
+        },
+        "lcd":{
+            "help": "0:disable 1:enable",
+            "value": "1"
+        },
+        "lcd-type":{
+            "help": "Options are GR_PEACH_4_3INCH_SHIELD, GR_PEACH_7_1INCH_SHIELD, GR_PEACH_RSK_TFT, GR_PEACH_DISPLAY_SHIELD, GR_LYCHEE_LCD",
+            "value": "GR_PEACH_4_3INCH_SHIELD"
         }
     },
     "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_mbed_client_config.h\""],
@@ -43,8 +55,14 @@
             "wifi-tx": "PA_11",
             "wifi-rx": "PA_12"
         },
+        "GR_LYCHEE": {
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY","MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
+        "RZ_A1H": {
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY","MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
         "UBLOX_EVK_ODIN_W2": {
-        "target.device_has_remove": ["EMAC"]
+            "target.device_has_remove": ["EMAC"]
         }
     }
 }
