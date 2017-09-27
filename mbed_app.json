@@ -2,7 +2,7 @@
     "config": {
         "network-interface":{
             "help": "Options are ETHERNET, WIFI_ESP8266, WIFI_ODIN, MESH_LOWPAN_ND, MESH_THREAD",
-            "value": "ETHERNET"
+            "value": "WIFI_ESP32"
         },
         "mesh_radio_type": {
         	"help": "options are ATMEL, MCR20",
@@ -23,18 +23,6 @@
         "wifi-rx": {
             "help": "RX pin for serial connection to external device",
             "value": "D0"
-        },
-        "camera":{
-            "help": "0:disable 1:enable",
-            "value": "0"
-        },
-        "lcd":{
-            "help": "0:disable 1:enable",
-            "value": "1"
-        },
-        "lcd-type":{
-            "help": "Options are GR_PEACH_4_3INCH_SHIELD, GR_PEACH_7_1INCH_SHIELD, GR_PEACH_RSK_TFT, GR_PEACH_DISPLAY_SHIELD, GR_LYCHEE_LCD",
-            "value": "GR_PEACH_4_3INCH_SHIELD"
         }
     },
     "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_mbed_client_config.h\""],

@@ -32,3 +32,5 @@ yotta_targets/
 build/
 .yotta.json
 source/security.h
+
+.DS_Store
