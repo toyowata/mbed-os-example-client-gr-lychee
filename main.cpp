@@ -55,10 +55,13 @@ MbedClient mbed_client(device);
 
 // In case of K64F board , there is button resource available
 // to change resource value and unregister
-#ifdef TARGET_K64F
+#if defined(TARGET_K64F)
 // Set up Hardware interrupt button.
 InterruptIn obs_button(SW2);
 InterruptIn unreg_button(SW3);
+#elif defined(TARGET_GR_LYCHEE)
+InterruptIn obs_button(USER_BUTTON0);
+InterruptIn unreg_button(USER_BUTTON1);
 #else
 //In non K64F boards , set up a timer to simulate updating resource,
 // there is no functionality to unregister.
@@ -229,7 +232,7 @@ public:
 
             // up counter
             counter++;
-    #ifdef TARGET_K64F
+    #if defined(TARGET_K64F) || defined(TARGET_GR_LYCHEE)
             printf("handle_button_click, new value of counter is %d\n", counter);
     #else
             printf("simulate button_click, new value of counter is %d\n", counter);
@@ -365,7 +368,7 @@ Add MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES and MBEDTLS_TEST_NULL_ENTROPY in mbed_app
     LedResource led_resource;
     BigPayloadResource big_payload_resource;
 
-#ifdef TARGET_K64F
+#if defined(TARGET_K64F) || defined(TARGET_GR_LYCHEE)
     // On press of SW3 button on K64F board, example application
     // will call unregister API towards mbed Device Connector
     //unreg_button.fall(&mbed_client,&MbedClient::test_unregister);
