@@ -1,3 +1,6 @@
+:warning:This repository is no longer being maintained. Please see the Pelion Device Management Client example for Renesas targets [repo](https://os.mbed.com/teams/Renesas/code/pelion-example-common/) for getting started examples. :warning:
+
+<!--
 # Getting started with mbed Client on mbed OS
 
 This is the mbed Client example for mbed OS (we also have one for [Linux](https://github.com/ARMmbed/mbed-client-linux-example)). It demonstrates how to register a device with mbed Device Connector, how to read and write values, and how to deregister. If you are unfamiliar with mbed Device Connector, we recommend that you read [the introduction to the data model](https://docs.mbed.com/docs/mbed-device-connector-web-interfaces/en/latest/#the-mbed-device-connector-data-model) first.
@@ -409,4 +412,4 @@ This should resolve the issue:
 ```		
 cp configs/eth-wifi-mbedignore ./.mbedignore		
 ```		
- 		
+ -->		
